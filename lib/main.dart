@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizapp/answer.dart';
 
 import './question.dart';
 
@@ -27,7 +28,17 @@ class _MyAppState extends State<MyApp> {
 
   @override 
   Widget build(BuildContext context) {
-    var questions = ["What is Your Favourite Color?","What is your Favourite Animal"];
+    var questions = [
+      {
+        'questiontext':'What is my favorate color',
+        'answer':['Black','Red','Green','White']
+      },
+
+      {
+        'questiontext':'What is my favorate animal',
+        'answer':['Rabbit','Snake','Elephant','Lion']
+      },
+    ];
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -36,11 +47,11 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: <Widget>[
-            Question(questions[_questionindex]),
-            RaisedButton(onPressed: _answerQuestion ,child: Text("Answer1"),),
-            RaisedButton(onPressed: _answerQuestion,child: Text("Answer2"),),
-            RaisedButton(onPressed: _answerQuestion,child: Text("Answer3"),),
-            RaisedButton(onPressed: _answerQuestion,child: Text("Answer4"),),
+            Question(questions[_questionindex]['questiontext']),
+            Answer(_answerQuestion),
+            Answer(_answerQuestion),
+            Answer(_answerQuestion),
+            Answer(_answerQuestion),
           ],
         ),
       ),
