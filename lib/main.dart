@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quizapp/answer.dart';
-
-import './question.dart';
+import 'package:quizapp/quiz.dart';
 
 void main()
 {
@@ -17,27 +15,29 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   var _questionindex  = 0;
 
-  final questions = const [
+  final _questions = const [
       {
         'questiontext':'What is my favorate color',
-        'answer':['Black','Red','Green','White']
+        'answer':[{'text':'Black','score ': 10},{'text':'Red','score ': 10},{'text':'Green','score ': 10},{'text':'Black','score ': 10}]
       },
 
       {
         'questiontext':'What is my favorate animal',
-        'answer':['Rabbit','Snake','Elephant','Lion']
+        'answer':[{'text':'Rabbit','score ': 10},{'text':'Snake','score ': 10},{'text':'Tiger','score ': 10},{'text':'Lion','score ': 10}]
       },
     ];
     
+    var _totalscore = 0;
 
-  void _answerQuestion()
+  void _answerQuestion(int score)
   { 
+    _totalscore +=  score;
     setState(() {
       _questionindex = _questionindex + 1;
     }); 
     print(_questionindex);
-    if (_questionindex < questions.length){
-      print("We Do not Have more Questions");
+    if (_questionindex < _questions.length){
+      print("We Do not Have more _Questions");
     }
   }
 
@@ -49,15 +49,9 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title:Text("Quiz App")
         ),
-        body: _questionindex < questions.length ? Column(
-          children: <Widget>[
-            Question(questions[_questionindex]['questiontext']),
-
-            ...(questions[_questionindex]['answer'] as List<String>).map((answer){
-              return Answer(_answerQuestion, answer);
-            }).toList()
-          ],
-        ) : Center(child: Text("You Did It.....!"),),
+        body: _questionindex < _questions.length ? 
+        Quiz(answerQuestion: _answerQuestion, questionindex: _questionindex, questions: _questions,) : 
+        Center(child: Text("You Did It.....!"),),
       ),
     );
   }
