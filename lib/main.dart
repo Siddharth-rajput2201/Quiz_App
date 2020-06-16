@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:quizapp/developedby.dart';
 import 'package:quizapp/quiz.dart';
 import 'package:quizapp/result.dart';
+
 
 void main()
 {
@@ -53,16 +55,49 @@ class _MyAppState extends State<MyApp> {
        });
   }
 
+  void _increase(){
+    setState(() {
+      _questionindex = _questionindex + 1;
+    });
+  }
+
+  void _decrease(){
+
+    setState(() {
+      if(_questionindex == 0){
+         _questionindex = 0;
+      }
+      else{
+        _questionindex = _questionindex - 1;
+      }
+    });
+  }
+
   @override 
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title:Text("Quiz App")
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(70.0),
+            child: AppBar(
+            backgroundColor: Colors.white,
+            title: Image.asset('Assets/logo.png', fit: BoxFit.fill,height: 50,width: 190,),
+            centerTitle: true,
+            shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(25),
+        ),
+        ),
+          ),
         ),
         body: _questionindex < _questions.length ? 
-        Quiz(answerQuestion: _answerQuestion, questionindex: _questionindex, questions: _questions,) : 
+        Column(
+          children: <Widget>[
+            Quiz(answerQuestion: _answerQuestion, questionindex: _questionindex, questions: _questions,skiphandler: _increase,backhandler: _decrease,),
+            Developedby(),
+          ],
+        ) : 
         Result(_totalscore,_resetquiz),
       ),
     );

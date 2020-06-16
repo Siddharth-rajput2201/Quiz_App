@@ -26,7 +26,7 @@ class Result extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Text(resultsentence),
-          FlatButton(child: Text("Restart Quiz!"),onPressed: resethandler,)
+          FlatButton(child: Text("Restart Quiz!"),onPressed: resethandler,),
         ],
       )
       );

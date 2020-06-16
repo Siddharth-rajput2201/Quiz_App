@@ -8,10 +8,18 @@ class Answer extends StatelessWidget {
  Answer(this.selecthandler,this.answertext);
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      child : RaisedButton(textColor: Colors.white,color: Colors.blue,onPressed: selecthandler ,
-      child: Text(answertext),),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+          decoration : BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(15),
+                  boxShadow: [BoxShadow(color:Color.fromRGBO(204, 132, 67, .5) ,blurRadius: 15,
+                  )]),
+      //  width: double.infinity,
+        child : FlatButton(textColor: Colors.black,onPressed: selecthandler ,
+        child: Text(answertext),),
+      ),
     );
   }
 }
