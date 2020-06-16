@@ -22,13 +22,24 @@ class _MyAppState extends State<MyApp> {
 
   final _questions = const [
       {
-        'questiontext':'What is my favorate color',
-        'answer':[{'text':'Black','score': 10},{'text':'Red','score': 10},{'text':'Green','score': 10},{'text':'Black','score ': 10}]
+        'questiontext':'So You Think You know me?\n....Then Tell My Pet Name :>',
+        'answer':[{'text':'Monu','score': 10},{'text':'Sonu','score': 0},{'text':'Mona','score': 0},{'text':'Sid','score': 0},{'text':'Sidhu','score': 0},{'text':'I Do Not Have Any 😅','score': 0}]
       },
 
       {
-        'questiontext':'What is my favorate animal',
-        'answer':[{'text':'Rabbit','score': 10},{'text':'Snake','score': 10},{'text':'Tiger','score': 10},{'text':'Lion','score': 10}]
+        'questiontext':'What Is Name At My Insta ?\n....If You Are going To See My Profile You Lose 😠',
+        'answer':[{'text':'rajputsiddharth_21','score': 0},{'text':'rajputsiddharth_22','score': 0},{'text':'SiddharhRajput_20','score': 0},{'text':'siddharthrajput_22','score': 10}]
+      },
+      
+      {
+        'questiontext':'In This Lockdown We All Are Have a Free Time.....What Is Fav Time Killer?',
+        'answer':[{'text':'Watching Series','score': 0},{'text':'Watching Anime','score': 0},{'text':'Sleeping 😴 ','score': 0},{'text':'Android App Development','score': 10}]
+      },
+      
+
+      {
+        'questiontext':'My Fav Person & Mentor ?',
+        'answer':[{'text':'Sambhav Gupta','score': 0},{'text':'Anurag Batra','score': 10},{'text':'Tanishq Saini','score': 5},{'text':'YOU 💙','score': 0}]
       },
     ];
     
@@ -92,11 +103,13 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
         body: _questionindex < _questions.length ? 
-        Column(
-          children: <Widget>[
-            Quiz(answerQuestion: _answerQuestion, questionindex: _questionindex, questions: _questions,skiphandler: _increase,backhandler: _decrease,),
-            Developedby(),
-          ],
+        SingleChildScrollView(
+                  child: Column(
+            children: <Widget>[
+              Quiz(answerQuestion: _answerQuestion, questionindex: _questionindex, questions: _questions,skiphandler: _increase,backhandler: _decrease,),
+              Developedby(),
+            ],
+          ),
         ) : 
         Result(_totalscore,_resetquiz),
       ),

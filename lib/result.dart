@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizapp/developedby.dart';
 
 class Result extends StatelessWidget {
 
@@ -7,16 +8,22 @@ class Result extends StatelessWidget {
 
   String get resultsentence{
     String resulttext = 'You Did it!...';
-    if(resultscore <= 8 ){
-      resulttext = 'You are awesome';
+    if(resultscore == 0 ){
+      resulttext = 'SCORE : 0 \nWe Need To Talk ! It is Required.';
     }
-    else if(resultscore <= 12){
-      resulttext = 'You are.... stange';
+    else if(resultscore <= 10){
+      resulttext = 'SCORE : 10 \nUff only 1 Correct Let us know Each Other';
     }
-    else{
-      resulttext = 'You are inncocent';
+    else if(resultscore <= 20){
+      resulttext = 'SCORE : 20 \nYou Know Pretty Much About Me\n......But Have You seen My Linkdin & Github Profile';
     }
-    return resulttext; 
+    else if(resultscore == 30){
+      resulttext = 'SCORE : 30 \nUWU 😇 Do I Know You ';
+    } 
+    else if(resultscore == 40){
+      resulttext = 'SCORE : 40 \nTake A SS And share this Score !TAG Me ';
+    }
+    return resulttext;
   }
 
   Result(this.resultscore,this.resethandler);
@@ -26,7 +33,8 @@ class Result extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Text(resultsentence),
-          FlatButton(child: Text("Restart Quiz!"),onPressed: resethandler,),
+          RaisedButton(child: Text("Restart Quiz!"),onPressed: resethandler,color: Colors.orange,),
+          Developedby()
         ],
       )
       );

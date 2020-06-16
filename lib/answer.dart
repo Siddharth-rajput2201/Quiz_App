@@ -18,7 +18,7 @@ class Answer extends StatelessWidget {
                   )]),
       //  width: double.infinity,
         child : FlatButton(textColor: Colors.black,onPressed: selecthandler ,
-        child: Text(answertext),),
+        child: Text(answertext,style: TextStyle(fontSize: 16),),),
       ),
     );
   }

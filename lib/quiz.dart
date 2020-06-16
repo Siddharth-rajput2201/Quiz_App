@@ -42,7 +42,8 @@ class Quiz extends StatelessWidget {
                    Padding(
                      padding: const EdgeInsets.all(8.0),
                      child: RaisedButton(
-                     child: Text("Skip"),
+                       color: Colors.blue[300],
+                     child: Text("Skip",style: TextStyle(color : Colors.white),),
                      onPressed: skiphandler,
                       ),
                    )
