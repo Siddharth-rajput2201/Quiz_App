@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Answer extends StatelessWidget {
 
@@ -18,7 +19,7 @@ class Answer extends StatelessWidget {
                   )]),
       //  width: double.infinity,
         child : FlatButton(textColor: Colors.black,onPressed: selecthandler ,
-        child: Text(answertext,style: TextStyle(fontSize: 16),),),
+        child: Text(answertext,style: GoogleFonts.patrickHand(textStyle: TextStyle(fontSize: 19), ),),),
       ),
     );
   }

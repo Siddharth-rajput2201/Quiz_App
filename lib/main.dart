@@ -28,18 +28,18 @@ class _MyAppState extends State<MyApp> {
 
       {
         'questiontext':'What Is Name At My Insta ?\n....If You Are going To See My Profile You Lose 😠',
-        'answer':[{'text':'rajputsiddharth_21','score': 0},{'text':'rajputsiddharth_22','score': 0},{'text':'SiddharhRajput_20','score': 0},{'text':'siddharthrajput_22','score': 10}]
+        'answer':[{'text':'rajputsiddharth_21','score': 0},{'text':'rajputsiddharth_22','score': 0},{'text':'Siddharh_Rajput20','score': 0},{'text':'siddharth_rajput22','score': 10}]
       },
       
       {
-        'questiontext':'In This Lockdown We All Are Have a Free Time.....What Is Fav Time Killer?',
+        'questiontext':'In This Lockdown We All Are Having a Free Time.....What Is My Fav Time Killer?',
         'answer':[{'text':'Watching Series','score': 0},{'text':'Watching Anime','score': 0},{'text':'Sleeping 😴 ','score': 0},{'text':'Android App Development','score': 10}]
       },
       
 
       {
-        'questiontext':'My Fav Person & Mentor ?',
-        'answer':[{'text':'Sambhav Gupta','score': 0},{'text':'Anurag Batra','score': 10},{'text':'Tanishq Saini','score': 5},{'text':'YOU 💙','score': 0}]
+        'questiontext':'My Fav Person And Mentor ?',
+        'answer':[{'text':'Sambhav Gupta','score': 0},{'text':'Anurag Batra','score': 10},{'text':'Tanishq Saini','score': 0},{'text':'YOU 💙','score': 0}]
       },
     ];
     
